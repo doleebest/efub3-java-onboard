@@ -9,6 +9,13 @@ public class Problem5 {
                 K %= values[i];
             }
         }
+        int money = K;
+
+        for(int i=N-1; i>=0; i--){
+            answer += money/values[i];
+            money = money%values[i];
+        }
+
         return answer;
     }
 }

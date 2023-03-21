@@ -1,6 +1,7 @@
 package onboard;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -33,6 +34,19 @@ public class Problem4 {
         for( int i=3; i>=0; i--){
             answer = answer + sprt[i]*10^i;
         }
+        String str = number.toString();
+        List<Integer> list = new ArrayList<>();
+
+        for(int i=0; i<str.length(); i++){
+            list.add(Integer.parseInt(str.substring(i,i+1)));
+        }
+
+        list.sort(Comparator.naturalOrder());
+
+        for(int i=0; i<list.size(); i++){
+            answer += (int)(list.get(i)*Math.pow(10, i));
+        }
+
         return answer;
     }
 }
